@@ -80,7 +80,6 @@ you run it out of the box.
 ├── HeartDiseaseTrain-Test.csv     # sample dataset (public)
 ├── requirements.txt
 ├── README.md
-├── .gitignore
 └── automl_outputs/                # plots + run summary (saved models gitignored)
 ```
 
