@@ -1,0 +1,54 @@
+=== Goal-Aware AutoML Run Summary ===
+
+Task type      : classification
+Goal           : 'i want to detect heart disease'
+Metric (CV)    : accuracy
+CV folds       : 5
+
+Dataset:
+  Train size   : 241 rows
+  Test size    : 61 rows
+  Features used: 13
+  Target column: target
+
+Pipelines evaluated (model × preprocessing × hyperparameters):
+  Total pipelines evaluated: 66
+
+  Example pipelines:
+    - Model=LogisticRegression, Strategy=strategy_A_median_scaler, Hyperparams={'C': 0.5, 'max_iter': 2000}, CV score=0.8673 (std=0.0247)
+    - Model=LogisticRegression, Strategy=strategy_A_median_scaler, Hyperparams={'C': 1.0, 'max_iter': 2000}, CV score=0.8756 (std=0.0259)
+    - Model=LogisticRegression, Strategy=strategy_B_mean_no_scaler, Hyperparams={'C': 0.5, 'max_iter': 2000}, CV score=0.8673 (std=0.0247)
+    - Model=LogisticRegression, Strategy=strategy_B_mean_no_scaler, Hyperparams={'C': 1.0, 'max_iter': 2000}, CV score=0.8756 (std=0.0259)
+    - Model=LogisticRegression, Strategy=strategy_C_median_minmax, Hyperparams={'C': 0.5, 'max_iter': 2000}, CV score=0.8630 (std=0.0171)
+
+Best pipeline per model:
+  - LogisticRegression: Strategy=strategy_A_median_scaler, Hyperparams={'C': 1.0, 'max_iter': 2000}, CV score=0.8756
+  - DecisionTreeClassifier: Strategy=strategy_C_median_minmax, Hyperparams={'max_depth': 8}, CV score=0.7717
+  - RandomForestClassifier: Strategy=strategy_C_median_minmax, Hyperparams={'max_depth': 10, 'n_estimators': 100}, CV score=0.8463
+  - KNeighborsClassifier: Strategy=strategy_C_median_minmax, Hyperparams={'n_neighbors': 5}, CV score=0.8546
+  - GaussianNB: Strategy=strategy_B_mean_no_scaler, Hyperparams={}, CV score=0.7925
+  - SVC: Strategy=strategy_C_median_minmax, Hyperparams={'C': 1.0, 'kernel': 'rbf', 'probability': True}, CV score=0.8545
+  - XGBoostClassifier_GPU: Strategy=strategy_A_median_scaler, Hyperparams={'learning_rate': 0.05, 'max_depth': 6, 'n_estimators': 200}, CV score=0.8131
+
+Best overall pipeline:
+  Model        : LogisticRegression
+  Strategy     : strategy_A_median_scaler
+  Hyperparams  : {'C': 1.0, 'max_iter': 2000}
+  CV mean score: 0.8756
+  CV std score : 0.0259
+
+Final test set performance:
+  accuracy    : 0.8197
+  precision   : 0.7812
+  recall      : 0.8621
+  f1          : 0.8197
+  roc_auc     : 0.8610
+
+Notes:
+  - Cross-validation was used to compare all pipelines and choose the best one.
+  - Multiple preprocessing strategies were evaluated, including different
+    imputation and scaling/encoding schemes.
+  - The selected model and preprocessing strategy achieved the best
+    cross-validation score according to the chosen metric.
+
+This summary can be adapted into the report's Methodology and Results sections.

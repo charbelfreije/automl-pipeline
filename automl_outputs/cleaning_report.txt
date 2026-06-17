@@ -1,0 +1,27 @@
+CLEANING REPORT
+===============
+
+Initial TRAIN shape: 1025 rows, 14 columns
+
+--- Infinite values (TRAIN) ---
+No infinite values found.
+
+--- Duplicate rows (TRAIN) ---
+Dropped 723 duplicate rows.
+
+--- Constant columns removed (TRAIN) ---
+No constant columns removed.
+
+--- Columns with >95% missing (TRAIN, removed) ---
+No columns exceeded 95% missingness.
+
+--- Whitespace trimming (TRAIN, object columns) ---
+No whitespace issues found.
+
+Final TRAIN shape:
+  302 rows, 14 columns
+Row reduction : 723 (70.54%)
+Column reduction: 0 (0.00%)
+
+Note: Further preprocessing (imputation, scaling, encoding)
+is handled inside the modeling pipelines.
