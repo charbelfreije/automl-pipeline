@@ -84,6 +84,3 @@ you run it out of the box.
 └── automl_outputs/                # plots + run summary (saved models gitignored)
 ```
 
-## License
-
-MIT — see `LICENSE`.
